@@ -1,7 +1,7 @@
-import React from 'react'
+import GetStartedSection from "../components/GetStartedSection";
 
 export default function Pricing() {
   return (
-    <div>Pricing</div>
-  )
+    <h1>PRICING</h1>
+    )
 }
