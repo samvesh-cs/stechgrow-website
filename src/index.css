@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
-body{
-    font-family: "Geist";
+body {
+  font-family: "Geist";
+}
+
+.spark {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.growth {
+  background-color: #b9f8b0;
+  color: #111111;
+}
+
+.elite {
+  background-color: #64758f;
+  color: #ffffff;
+}
+
+.enterprise {
+  background-color: #625ff0;
+  color: #ffffff;
+}
+
+.btn-spark,
+.btn-growth {
+  background-color: #625ff0;
+  color: #ffffff;
+}
+.btn-elite,
+.btn-enterprise {
+  background-color: #ffffff;
+  color: black;
 }

@@ -1,4 +1,5 @@
 import GetStartedSection from "../components/GetStartedSection";
+import Preview from "../components/Preview";
 
 const values = [
   {
@@ -80,19 +81,7 @@ function About() {
       {/* preview section */}
       <section className="bg-white px-5 py-12">
         <div className="mx-auto max-w-6xl">
-
-          <div className="flex min-h-64 items-center justify-center flex-col md:gap-10 gap-5 rounded-4xl bg-neutral-100 md:px-15 px-9 md:py-10 py-5 text-center text-neutral-600 md:min-h-96">
-
-            <img src="images\previewVideo.png" alt="preview image" className="shadow-md rounded-2xl" />
-
-            <button
-              type="button"
-              className="text-xl md:text-2xl rounded-lg bg-indigo-500 px-8 py-2 font-medium text-white transition-all duration-200 hover:bg-indigo-600 hover:scale-[1.02] active:scale-98"
-            >
-              Get Started <i className="ri-arrow-right-long-line"></i>
-            </button>
-
-          </div>
+          <Preview />
 
           <div className="mx-auto max-w-4xl py-12 text-center text-black">
             <h1 className="md:text-5xl font-semibold text-indigo-700 text-4xl">
@@ -148,7 +137,7 @@ function About() {
       <section className="px-5 py-16 md:py-24">
         <div className="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
           {values.map((value) => (
-            <div className="rounded-xl bg-white p-7 text-black md:p-10 group hover:bg-indigo-500 hover:text-white transition-all duration-200">
+            <div className="rounded-xl bg-white p-7 text-black md:p-10 group hover:bg-indigo-500 hover:text-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg">
 
               <div className="flex size-12 items-center justify-center rounded-full text-indigo-100 text-2xl  bg-indigo-600 group-hover:bg-white group-hover:text-indigo-500">
                 {value.icon}
@@ -181,7 +170,7 @@ function About() {
             {capabilities.map((value) => (
               <div
                 key={value.title}
-                className="rounded-xl bg-white p-6 text-black group hover:bg-indigo-500 hover:text-white transition-all duration-200"
+                className="rounded-xl bg-white p-6 text-black group hover:bg-indigo-500 hover:text-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex size-12 items-center justify-center rounded-full text-indigo-100 text-2xl  bg-indigo-600 group-hover:bg-white group-hover:text-indigo-500">
                   {value.icon}
@@ -215,8 +204,8 @@ function About() {
           </div>
 
           <div className="mx-auto mt-12 max-w-md md:max-w-90 text-center">
-            <div className="flex h-100 items-center justify-center rounded-xl bg-neutral-200 text-neutral-500 transition-all duration-200 hover:-translate-y-1">
-              
+            <div className="flex h-100 items-center justify-center rounded-xl bg-neutral-200 text-neutral-500 transition-all duration-300 hover:scale-102">
+
             </div>
 
             <h3 className="mt-4 text-2xl font-semibold">
@@ -231,7 +220,7 @@ function About() {
           <div className="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
             {leaders.map((leader, index) => (
               <div key={`${leader.name}-${index}`}>
-                <div className="flex h-60 items-center justify-center rounded-lg bg-neutral-200 text-sm text-neutral-500 md:h-70  transition-all duration-200 hover:-translate-y-1">
+                <div className="flex h-60 items-center justify-center rounded-lg bg-neutral-200 text-sm text-neutral-500 md:h-70 transition-all duration-300 hover:scale-102">
                 </div>
 
                 <h3 className="mt-3 text-xl font-semibold">{leader.name}</h3>
