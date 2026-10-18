@@ -42,15 +42,13 @@ export default function FAQ() {
                 const isOpen = openIndex === index;
 
                 return (
-                    <div key={faq.question}
-                        className={`md:px-5 py-1  rounded-2xl transition-colors duration-300 ${isOpen ? "bg-[#625FF0]" : "bg-[#242424]"}`}>
+                    <div key={faq.question} className={`md:px-5 py-1  rounded-2xl transition-colors duration-300 ${isOpen ? "bg-[#625FF0]" : "bg-[#242424]"}`}>
 
                         <button
-                            type="button"
+                            type="button" className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm text-white"
                             onClick={() =>
                                 setOpenIndex(isOpen ? -1 : index)
                             }
-                            className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm text-white"
                         >
                             <span className="font-normal md:text-xl">{faq.question}</span>
 

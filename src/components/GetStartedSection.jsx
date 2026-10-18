@@ -1,7 +1,7 @@
 
 export default function GetStartedSection() {
     return (
-        <section className="px-5 py-12">
+        <section className="px-5 py-12 pb-30">
             <div className="flex flex-col items-center mx-auto max-w-6xl rounded-2xl bg-[#6366F1] px-6 pt-12 pb-0 text-center md:px-12 md:pt-16 md:pb-0">
                 <h2 className="text-4xl font-semibold md:text-5xl max-w-150">
                     Ready to turn data into strategy?
