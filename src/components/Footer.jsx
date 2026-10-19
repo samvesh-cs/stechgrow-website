@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 
 export default function Footer() {
     return (
@@ -5,7 +6,7 @@ export default function Footer() {
             <div className="mx-auto md:flex max-w-7xl gap-8 px-6 py-12 justify-between border-b border-white/10">
                 <div className="lg:col-span-2">
                     <h2 className="flex items-center gap-2 text-xl font-semibold">
-                        <img src="images\logo.png" className="size-14" alt="Stechgrow Logo" />
+                        <img src="images\logo1.png" className="size-14" alt="Stechgrow Logo" />
                         Stechgrow
                     </h2>
 
@@ -32,25 +33,35 @@ export default function Footer() {
 
                             <a href="https://x.com/stechgrow" aria-label="X" className=" text-2xl text-neutral-300 transition-colors hover:text-white"
                             >
-                                <i class="ri-twitter-x-line"></i>
+                                <i className="ri-twitter-x-line"></i>
                             </a>
                         </div>
                     </div>
 
                     <div>
                         <h3 className="mb-4 font-medium  text-2xl">Product</h3>
-                        <ul className="space-y-3 text-lg text-neutral-400">
-                            <li><a href="/" className="hover:text-white">Platform</a></li>
-                            <li><a href="/" className="hover:text-white">Solutions</a></li>
-                            <li><a href="/" className="hover:text-white">Pricing</a></li>
+                        <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
+                            <li>
+                                <Link to="/platform" className="hover:text-white">Platform</Link>
+                            </li>
+                            <li>
+                                <Link to="/solution" className="hover:text-white">Solutions</Link>
+                            </li>
+                            <li>
+                                <Link to="/pricing" className="hover:text-white">Pricing</Link>
+                            </li>
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="mb-4 font-medium text-2xl">Company</h3>
-                        <ul className="space-y-3 text-lg text-neutral-400">
-                            <li><a href="/" className="hover:text-white">About</a></li>
-                            <li><a href="/" className="hover:text-white">Contact</a></li>
+                        <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
+                            <li>
+                                <Link to="/about" className="hover:text-white">About</Link>
+                            </li>
+                            <li>
+                                <Link to="/contact" className="hover:text-white">Contact</Link>
+                            </li>
                         </ul>
                     </div>
 

@@ -82,55 +82,55 @@ const pricingPlans = [
 
 export default function PricingCards() {
     return (
-                <div className=" z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-4">
+        <div className=" z-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:px-4">
 
-        {pricingPlans.map((plan)=>(
-            <div key={plan.theme} className={`${plan.theme} py-8 px-6 rounded-lg relative transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl`}>
-                {plan.badge && (
-                    <div className="absolute -top-6 -right-2 rotate-16 flex items-center justify-center gap-2 rounded bg-white text-black px-3 py-3 border border-gray-100 shadow-xl">
-                        <i className="ri-discount-percent-line shrink-0 text-xl font-medium"></i>
-                        <p className="text-xl font-medium tracking-tight text-black ">
-                            {plan.badge}
+            {pricingPlans.map((plan) => (
+                <div key={plan.theme} className={`${plan.theme} py-8 px-6 rounded-lg relative transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl`}>
+                    {plan.badge && (
+                        <div className="absolute -top-6 -right-2 rotate-16 flex items-center justify-center gap-2 rounded bg-white text-black px-3 py-3 border border-gray-100 shadow-xl">
+                            <i className="ri-discount-percent-line shrink-0 text-xl font-medium"></i>
+                            <p className="text-xl font-medium tracking-tight text-black ">
+                                {plan.badge}
 
-                        </p>
+                            </p>
+                        </div>
+                    )}
+
+                    <h2 className="text-xl font-[Geist_Mono] font-medium text-left">{plan.name}</h2>
+
+                    <div className="mx-auto my-3 border-t border-gray-900/20" />
+
+                    <p className="text-sm text-left mt-5  font-light">{plan.description}</p>
+
+                    <div className="relative mt-12 ">
+                        {
+                            plan.oldPrice &&
+                            <span className="flex absolute -top-8 left-0 text-xl text-gray-700 font-normal line-through ">{plan.oldPrice}</span>
+                        }
                     </div>
-                )}
 
-                <h2 className="text-xl font-[Geist_Mono] font-medium text-left">{plan.name}</h2>
+                    <h3 className="text-5xl font-medium  text-left">{plan.price}</h3>
+                    <p className="ml-2 mt-1 text-left font-normal text-base">{plan.subtitle}</p>
 
-                <div className="mx-auto my-3 h-0.5 w-full bg-gray-400/20 rounded"></div>
+                    <button
+                        type="button"
+                        className={`btn-${plan.theme} font-[Geist_Mono] font-medium mt-8 mb-4 text-sm w-full rounded-lg px-8 py-2  transition-all duration-200 hover:scale-[1.02] active:scale-98`}
+                    >
+                        {plan.buttonText}
+                    </button>
 
-                <p className="text-sm text-left mt-5  font-light">{plan.description}</p>
-
-                <div className="relative mt-12 ">
-                    {
-                        plan.oldPrice &&
-                        <span className="flex absolute -top-8 left-0 text-xl text-gray-700 font-normal line-through ">{plan.oldPrice}</span>
-                    }
+                    <ul>
+                        {plan.features.map((feature) => (
+                            <li key={feature} className="flex gap-3 mb-2 items-center ">
+                                <span className="flex size-6 items-center justify-center rounded-full text-black text-base border border-black bg-white shrink-0" >
+                                    <i className="ri-check-line font-semibold "></i>
+                                </span>
+                                <span className="font-normal text-sm text-left">{feature}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-
-                <h3 className="text-5xl font-medium  text-left">{plan.price}</h3>
-                <p className="ml-2 mt-1 text-left font-normal text-base">{plan.subtitle}</p>
-
-                <button
-                    type="button"
-                    className={`btn-${plan.theme} font-[Geist_Mono] font-medium mt-8 mb-4 text-sm w-full rounded-lg px-8 py-2  transition-all duration-200 hover:scale-[1.02] active:scale-98`}
-                >
-                    {plan.buttonText}
-                </button>
-
-                <ul>
-                    {plan.features.map((feature) => (
-                        <li key={feature} className="flex gap-3 mb-2 items-center ">
-                            <span className="flex size-6 items-center justify-center rounded-full text-black text-base border border-black bg-white shrink-0" >
-                                <i className="ri-check-line font-semibold "></i>
-                            </span>
-                            <span className="font-normal text-sm text-left">{feature}</span>
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        ))}
+            ))}
         </div>
     )
 }
