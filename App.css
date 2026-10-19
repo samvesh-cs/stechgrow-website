@@ -1,0 +1,51 @@
+/* Root App Layout */
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--bg-main);
+  overflow-x: hidden;
+}
+
+/* Background Atmospheric Glow Orbs */
+.bg-glow-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(130px);
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.15;
+}
+
+.orb-primary {
+  top: -100px;
+  right: -50px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+}
+
+.orb-teal {
+  top: 40%;
+  left: -200px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--teal) 0%, transparent 70%);
+}
+
+.orb-rose {
+  bottom: 10%;
+  right: -100px;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, var(--rose) 0%, transparent 70%);
+}
+
+.main-content {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
