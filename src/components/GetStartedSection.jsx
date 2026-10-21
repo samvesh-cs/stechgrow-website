@@ -1,3 +1,4 @@
+import Button from "./Button";
 
 export default function GetStartedSection() {
     return (
@@ -7,17 +8,14 @@ export default function GetStartedSection() {
                     Ready to turn data into strategy?
                 </h2>
 
-                <p className="mx-auto mt-5 max-w-100 text-indigo-100">
+                <p className="mx-auto mt-5 mb-5 max-w-100 text-indigo-100">
                     Join leading companies using StechGrow to make smarter,
                     faster decisions.
                 </p>
 
-                <button
-                    type="button"
-                    className="mt-5 text-xl rounded-lg bg-white px-8 py-2 font-medium text-black transition-all duration-200 hover:scale-[1.02] active:scale-98"
-                >
-                    Get Started <i className="ri-arrow-right-long-line"></i>
-                </button>
+
+                <Button color={"bg-white"} textColor={"text-black"}/>
+                
 
                 <img src="images\preview.png" alt="preview image" />
             </div>

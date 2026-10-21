@@ -1,5 +1,32 @@
 import { Link } from "react-router";
 
+const footerSections = [
+    {
+        title: "Platform",
+        links: [
+            { name: "Platform", href: "/platform" },
+            { name: "Solutions", href: "/solution" },
+            { name: "Pricing", href: "/pricing" },
+        ],
+    },
+    {
+        title: "Company",
+        links: [
+            { name: "About", href: "/about" },
+            { name: "Contact", href: "/contact" },
+        ],
+    },
+    {
+        title: "Legal",
+        links: [
+            { name: "Privacy Policy", href: "/privacy" },
+            { name: "Terms of Service", href: "/terms" },
+            { name: "Cookie Policy", href: "/cookies" },
+            { name: "Accessibility", href: "/accessibility" },
+        ],
+    },
+];
+
 export default function Footer() {
     return (
         <footer className="bg-[#101010] text-white">
@@ -26,12 +53,12 @@ export default function Footer() {
                         <h3 className="mb-4 font-medium text-2xl">Links</h3>
 
                         <div className="flex gap-4">
-                            <a href="https://www.linkedin.com/company/stechgrow.com/" aria-label="LinkedIn" className="text-neutral-300 transition-colors text-2xl hover:text-white"
+                            <a href="https://www.linkedin.com/company/stechgrow.com/" aria-label="LinkedIn" className="text-neutral-300 text-2xl hover:-translate-y-1 hover:text-indigo-500 transition-all duration-200"
                             >
                                 <i className="ri-linkedin-fill"></i>
                             </a>
 
-                            <a href="https://x.com/stechgrow" aria-label="X" className=" text-2xl text-neutral-300 transition-colors hover:text-white"
+                            <a href="https://x.com/stechgrow" aria-label="X" className=" text-2xl text-neutral-300 hover:-translate-y-1 hover:text-indigo-500 transition-all duration-200"
                             >
                                 <i className="ri-twitter-x-line"></i>
                             </a>
@@ -41,37 +68,42 @@ export default function Footer() {
                     <div>
                         <h3 className="mb-4 font-medium  text-2xl">Product</h3>
                         <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
-                            <li>
-                                <Link to="/platform" className="hover:text-white">Platform</Link>
-                            </li>
-                            <li>
-                                <Link to="/solution" className="hover:text-white">Solutions</Link>
-                            </li>
-                            <li>
-                                <Link to="/pricing" className="hover:text-white">Pricing</Link>
-                            </li>
+                            {
+                                footerSections[0].links.map((data) => (
+                                    <li className="group" key={data.name}>
+                                        <Link to={data.href} className="hover:text-white inline-block transition-transform duration-200 hover:translate-x-1">{data.name}</Link>
+                                    </li>
+
+                                ))
+                            }
                         </ul>
+
                     </div>
 
                     <div>
                         <h3 className="mb-4 font-medium text-2xl">Company</h3>
                         <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
-                            <li>
-                                <Link to="/about" className="hover:text-white">About</Link>
-                            </li>
-                            <li>
-                                <Link to="/contact" className="hover:text-white">Contact</Link>
-                            </li>
+                            {
+                                footerSections[1].links.map((data) => (
+                                    <li className="group" key={data.name}>
+                                        <Link to={data.href} className="hover:text-white inline-block transition-transform duration-200 hover:translate-x-1">{data.name}</Link>
+                                    </li>
+
+                                ))
+                            }
                         </ul>
                     </div>
 
                     <div>
                         <h3 className="mb-4 font-medium text-2xl">Legal</h3>
-                        <ul className="space-y-3 text-lg text-neutral-400">
-                            <li><a href="/" className="hover:text-white">Privacy Policy</a></li>
-                            <li><a href="/" className="hover:text-white">Terms of Service</a></li>
-                            <li><a href="/" className="hover:text-white">Cookie Policy</a></li>
-                            <li><a href="/" className="hover:text-white">Accessibility</a></li>
+                        <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
+                            {
+                                footerSections[2].links.map((data) => (
+                                    <li className="group" key={data.name}>
+                                        <Link to={data.href} className="hover:text-white inline-block transition-transform duration-200 hover:translate-x-1">{data.name}</Link>
+                                    </li>
+                                ))
+                            }
                         </ul>
                     </div>
                 </div>
