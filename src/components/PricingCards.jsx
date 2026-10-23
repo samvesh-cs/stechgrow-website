@@ -1,4 +1,5 @@
-import {BadgePercent,Check} from "lucide-react"
+import { BadgePercent, Check } from "lucide-react"
+import { Link } from "react-router"
 
 const pricingPlans = [
     {
@@ -90,7 +91,7 @@ export default function PricingCards() {
                 <div key={plan.theme} className={`${plan.theme} py-8 px-6 rounded-lg relative transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl`}>
                     {plan.badge && (
                         <div className="absolute -top-6 -right-2 rotate-16 flex items-center justify-center gap-2 rounded bg-white text-black px-3 py-3 border border-gray-100 shadow-xl">
-                            <BadgePercent className="shrink-0 text-xl font-medium"/>
+                            <BadgePercent className="shrink-0 text-xl font-medium" />
                             <p className="text-xl font-medium tracking-tight text-black ">
                                 {plan.badge}
 
@@ -114,12 +115,16 @@ export default function PricingCards() {
                     <h3 className="text-5xl font-medium  text-left">{plan.price}</h3>
                     <p className="ml-2 mt-1 text-left font-normal text-base">{plan.subtitle}</p>
 
-                    <button
-                        type="button"
-                        className={`btn-${plan.theme} font-[Geist_Mono] font-medium mt-8 mb-4 text-sm w-full rounded-lg px-8 py-2  transition-all duration-200 hover:scale-[1.02] active:scale-98`}
-                    >
-                        {plan.buttonText}
-                    </button>
+                    <Link to="/contact">
+                        <button
+                            type="button"
+
+                            className={`btn-${plan.theme} font-[Geist_Mono] font-medium mt-8 mb-4 text-sm w-full rounded-lg px-8 py-2  transition-all duration-200 hover:scale-[1.02] active:scale-98`}
+                        >
+                            {plan.buttonText}
+                        </button>
+                    </Link>
+
 
                     <ul>
                         {plan.features.map((feature) => (

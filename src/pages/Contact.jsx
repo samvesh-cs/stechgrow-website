@@ -1,7 +1,14 @@
 import { Mail, Phone } from "lucide-react";
-import { useState } from "react";
+import { useState, useCallback } from "react";
+import Toast from "../components/Toast";
 
 export default function Contact() {
+  const [toast, setToast] = useState(null);
+
+  const closeToast = useCallback(() => {
+    setToast(null);
+  }, []);
+
   const initialFormData = {
     name: "",
     email: "",
@@ -22,6 +29,10 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    setToast({
+      message: "Message sent successfully!",
+      type: "success",
+    });
     console.log("Contact form submitted:", formData);
     setFormData(initialFormData);
   }
@@ -53,6 +64,7 @@ export default function Contact() {
         <div className="relative z-10 mx-auto grid max-w-7xl gap-7 rounded-2xl bg-white px-4 py-6 text-black lg:grid-cols-2 lg:gap-8 md:grid-cols-1 md:gap-8 md:p-8">
           {/* Info */}
           <div className="bg-[url('/images/contactFormBG.png')] bg-cover bg-bottom bg-no-repeat relative flex  flex-col rounded-xl p-7 text-white md:min-h-165 md:p-12 ">
+            {/* background */}
             <div className="bg-black/60 absolute inset-0 rounded-2xl"></div>
 
             <div className="relative z-10">
@@ -185,6 +197,13 @@ export default function Contact() {
             </form>
           </div>
         </div>
+        {toast && (
+          <Toast
+            message={toast.message}
+            type={toast.type}
+            onClose={closeToast}
+          />
+        )}
       </section>
     </main>
   );
