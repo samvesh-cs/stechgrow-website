@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { Minus, Plus } from "lucide-react";
 const faqs = [
     {
         question: "Can I change plans at any time?",
@@ -51,10 +51,7 @@ export default function FAQ() {
                             }
                         >
                             <span className="font-normal md:text-xl">{faq.question}</span>
-
-                            {isOpen ?
-                                <i class="ri-subtract-line text-xl"></i> :
-                                <i className="ri-add-large-line "></i>}
+                            {isOpen ? <Minus size={2} /> : <Plus />}
                         </button>
 
                         {isOpen && (

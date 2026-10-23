@@ -1,4 +1,6 @@
 import { Link } from "react-router";
+import { FaLinkedinIn } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const footerSections = [
     {
@@ -55,12 +57,13 @@ export default function Footer() {
                         <div className="flex gap-4">
                             <a href="https://www.linkedin.com/company/stechgrow.com/" aria-label="LinkedIn" className="text-neutral-300 text-2xl hover:-translate-y-1 hover:text-indigo-500 transition-all duration-200"
                             >
-                                <i className="ri-linkedin-fill"></i>
+                                <FaLinkedinIn />
+
                             </a>
 
                             <a href="https://x.com/stechgrow" aria-label="X" className=" text-2xl text-neutral-300 hover:-translate-y-1 hover:text-indigo-500 transition-all duration-200"
                             >
-                                <i className="ri-twitter-x-line"></i>
+                                <FaXTwitter />
                             </a>
                         </div>
                     </div>
@@ -70,8 +73,10 @@ export default function Footer() {
                         <ul className="space-y-3 text-lg text-neutral-400 transition-all duration-200">
                             {
                                 footerSections[0].links.map((data) => (
-                                    <li className="group" key={data.name}>
-                                        <Link to={data.href} className="hover:text-white inline-block transition-transform duration-200 hover:translate-x-1">{data.name}</Link>
+
+
+                                    <li key={data.name}>
+                                        <Link to={data.href} className="hover:text-white inline-block transition-transform duration-200 hover:translate-x-1" >{data.name}</Link>
                                     </li>
 
                                 ))
@@ -117,7 +122,6 @@ export default function Footer() {
             <div className="overflow-visible px-4">
                 <p className="bg-linear-to-r from-indigo-950 from-25% via-indigo-400 via-50% to-indigo-950 to-100% bg-clip-text text-center text-[18vw] pt-4 pb-10 font-semibold leading-none tracking-tight text-transparent ">
                     Stechgrow
-
                 </p>
             </div>
         </footer>

@@ -1,3 +1,5 @@
+import {BadgePercent,Check} from "lucide-react"
+
 const pricingPlans = [
     {
         name: "Spark",
@@ -38,7 +40,7 @@ const pricingPlans = [
     },
     {
         name: "Elite",
-        description: "Move Beyond Analytics to Intelligent Decision-Making",
+        description: "Move Beyond Analytics to Intelligent Decision",
         oldPrice: "₹74,999",
         price: "₹59,999 +",
         subtitle: "GST / Year",
@@ -63,7 +65,7 @@ const pricingPlans = [
     {
         name: "Enterprise",
         description:
-            "A Complete Decision Intelligence Ecosystem for Large Organizations",
+            "A Complete Decision Intelligence Ecosystem",
         price: "Customized",
         subtitle: "Pricing",
         buttonText: "Start Free Trial",
@@ -88,7 +90,7 @@ export default function PricingCards() {
                 <div key={plan.theme} className={`${plan.theme} py-8 px-6 rounded-lg relative transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl`}>
                     {plan.badge && (
                         <div className="absolute -top-6 -right-2 rotate-16 flex items-center justify-center gap-2 rounded bg-white text-black px-3 py-3 border border-gray-100 shadow-xl">
-                            <i className="ri-discount-percent-line shrink-0 text-xl font-medium"></i>
+                            <BadgePercent className="shrink-0 text-xl font-medium"/>
                             <p className="text-xl font-medium tracking-tight text-black ">
                                 {plan.badge}
 
@@ -100,7 +102,7 @@ export default function PricingCards() {
 
                     <div className="mx-auto my-3 border-t border-gray-900/20" />
 
-                    <p className="text-sm text-left mt-5  font-light">{plan.description}</p>
+                    <p className="text-sm text-left mt-5 truncate  font-light">{plan.description}</p>
 
                     <div className="relative mt-12 ">
                         {
@@ -122,8 +124,8 @@ export default function PricingCards() {
                     <ul>
                         {plan.features.map((feature) => (
                             <li key={feature} className="flex gap-3 mb-2 items-center ">
-                                <span className="flex size-6 items-center justify-center rounded-full text-black text-base border border-black bg-white shrink-0" >
-                                    <i className="ri-check-line font-semibold "></i>
+                                <span className="flex size-6 items-center p-0.5 justify-center rounded-full text-black text-base border border-black bg-white shrink-0" >
+                                    <Check className="font-semibold" />
                                 </span>
                                 <span className="font-normal text-sm text-left">{feature}</span>
                             </li>

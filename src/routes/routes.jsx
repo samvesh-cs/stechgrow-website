@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
+import { Routes, Route } from "react-router";
 import Home from "../pages/Home";
 import Solution from "../pages/Solution";
 import Platform from "../pages/Platform";
@@ -10,8 +10,8 @@ import NotFound from "../pages/NotFound";
 
 const AppRoutes = () => {
     return (
+        <>
 
-        <BrowserRouter>
             <ScrollToTop />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -20,9 +20,9 @@ const AppRoutes = () => {
                 <Route path="/about" element={<About />} />
                 <Route path="/pricing" element={<Pricing />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="*" element={<NotFound/>} />
+                <Route path="*" element={<NotFound />} />
             </Routes>
-        </BrowserRouter>
+        </>
     )
 }
 

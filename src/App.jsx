@@ -1,10 +1,13 @@
 import './App.css'
+import Footer from './components/Footer'
 import AppRoutes from './routes/routes'
-import React from 'react'
 
 function App() {
   return (
-    <AppRoutes />
+    <>
+      <AppRoutes />
+      <Footer />
+    </>
   )
 }
 
